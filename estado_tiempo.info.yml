@@ -1,0 +1,7 @@
+name: Estado Tiempo
+type: module
+description: 'Displays weather state in Spain regions.'
+package: Atenea
+core: '8.x'
+dependencies:
+  - drupal:views
