@@ -1,5 +1,5 @@
 El Tiempo en Madrid
-Muestra un icono con las condiciones del tiempo actuales en madrid.
+Shows an Icon with the current weather conditions in Madrid Spain.
 
 INSTALATION
 ---------------------
