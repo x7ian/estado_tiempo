@@ -1,3 +1,6 @@
+El Tiempo en Madrid
+Muestra un icono con las condiciones del tiempo actuales en madrid.
+
 INSTALATION
 ---------------------
 Install as usuall,  like any Drupal module.
