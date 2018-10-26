@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\estado_clima\Plugin\Block;
+namespace Drupal\estado_tiempo\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 
@@ -19,10 +19,20 @@ class EstadoTiempoBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    $estadoClimaInfo  = \Drupal::service('estado_clima.EstadoClimaInfo');
-    return array(
-      '#markup' => $this->t('Estado del tiempo en españa!' . $estadoClimaInfo),
-    );
+    /*return array(
+      '#markup' => $this->t('Hello, World!'),
+    );*/
+
+    return [
+      '#theme' => 'estado_tiempo_icono',
+      '#cache' => ['contexts' => ['url.path', 'url.query_args']],
+      '#fecha' => '2018-10-25',
+      '#attached' => [
+        'library' => [
+          'estado_tiempo/estilos_icono',
+        ],
+      ],
+    ];
   }
 
 }

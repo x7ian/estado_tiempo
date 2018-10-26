@@ -4,4 +4,4 @@ description: 'Displays weather state in Spain regions.'
 package: Atenea
 core: '8.x'
 dependencies:
-  - drupal:views
+  - drupal:serialization

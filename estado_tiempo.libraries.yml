@@ -1,0 +1,4 @@
+estilos_icono:
+  css:
+    component:
+      css/estado_tiempo.css: {}
