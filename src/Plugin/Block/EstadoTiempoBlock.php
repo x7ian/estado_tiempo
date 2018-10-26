@@ -22,10 +22,8 @@ class EstadoTiempoBlock extends BlockBase {
     /*return array(
       '#markup' => $this->t('Hello, World!'),
     );*/
-
     return [
       '#theme' => 'estado_tiempo_icono',
-      '#cache' => ['contexts' => ['url.path', 'url.query_args']],
       '#fecha' => '2018-10-25',
       '#attached' => [
         'library' => [
@@ -33,6 +31,14 @@ class EstadoTiempoBlock extends BlockBase {
         ],
       ],
     ];
+  }
+
+  /**
+   * Prevent block from being cached.
+   *
+   */
+  public function getCacheMaxAge() {
+    return 0;
   }
 
 }

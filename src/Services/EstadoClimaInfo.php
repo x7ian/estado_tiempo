@@ -52,11 +52,32 @@ class EstadoClimaInfo {
       }
     }
     $estado_cielo = $dia['estado_cielo'];
-    foreach(array_reverse($estado_cielo) as $horas) {
-      list($inic, $fin) = explode('-', $horas['@periodo']);
-      if ($hora>=$inic && $hora<=$fin) {
-        break;
+    $use_next = false;
+    if (count($estado_cielo)>2) {
+      foreach(array_reverse($estado_cielo) as $horas) {
+        if (isset($horas['@periodo'])) {
+          list($inic, $fin) = explode('-', $horas['@periodo']);
+          if ($use_next) {
+            if (isset($horas['#']) && !empty($horas['#'])) {
+              break;
+            } else {
+              continue;
+            }
+          } else {
+            if ($inic<=$hora && $hora<=$fin) {
+              if (isset($horas['#']) && !empty($horas['#'])) {
+                break;
+              } else {
+                $use_next = true;
+              }
+            }
+          }
+        } else {
+          break;
+        }
       }
+    } else {
+      $horas = $estado_cielo;
     }
     $filename_fragment = $horas['#'];
     return $filename_fragment;
