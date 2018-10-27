@@ -1,4 +1,4 @@
-El Tiempo en Madrid
+El Tiempo en Madrid - Drupal 8 Module
 Shows an Icon with the current weather conditions in Madrid Spain.
 
 INSTALATION
