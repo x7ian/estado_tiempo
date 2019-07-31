@@ -19,9 +19,6 @@ class EstadoTiempoBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    /*return array(
-      '#markup' => $this->t('Hello, World!'),
-    );*/
     return [
       '#theme' => 'estado_tiempo_icono',
       '#fecha' => '2018-10-25',
